@@ -1,0 +1,12 @@
+@use "@/styles/system";
+
+.footer{
+    display: flex;
+    height: 120px;
+    width: 100%;
+    border-top: 1px solid #333;
+    padding: 50px;
+    align-items: start;
+    justify-content: start;
+    margin-top: 50px;
+}

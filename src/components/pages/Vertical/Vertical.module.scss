@@ -1,0 +1,13 @@
+@use "@/styles/system";
+
+.main{
+
+  max-width: 1024px;
+  margin: 40px auto auto auto;
+
+  h1{
+    @include system.font-level-1;
+  }
+ 
+
+}
