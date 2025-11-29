@@ -1,0 +1,61 @@
+@use "@/styles/system";
+
+.container{
+    background-color: system.$purple-blue;
+    width: 100%;
+    margin: 15px 0;
+    .wrapper{
+        @include system.container-width-1;
+        display: grid;
+        grid-template-areas: 'img-cont text-cont';
+        grid-template-columns:
+        36.1%
+        calc(63.9% - 40px)        
+        ;
+        gap: 40px;
+        .img_cont{
+            grid-area: img-cont;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            overflow: hidden;
+            img{
+                height: 100%;
+                width: auto;
+            }
+        }
+        .text_cont{
+            grid-area: text-cont;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            padding: 60px 0;
+            .tag{
+                @include system.font-level-11;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: system.$white;
+                margin-bottom: 12px;
+            }
+            .title{
+                @include system.font-level-3;
+                font-family: 'PPEiko',  Helvetica, sans-serif;
+                font-weight: 700;
+                line-height: 130%;
+                color: system.$white;
+            }
+            .author{
+                position: relative;
+                @include system.font-level-12;
+                font-weight: 400;
+                color: system.$white;
+                margin-top: 18px;
+                strong{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

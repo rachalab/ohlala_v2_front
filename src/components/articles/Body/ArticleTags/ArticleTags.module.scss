@@ -1,0 +1,16 @@
+@use "@/styles/system";
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+    .title{
+        @include system.font-level-11;   
+        font-weight: 600;
+        color: system.$black-2;
+    }
+    .tag_btn{
+        @include system.button(secondary);
+    }
+}

@@ -1,0 +1,26 @@
+@use "@/styles/system";
+
+.wrapper{
+    a{
+        @include system.font-level-12;        
+        font-weight: 600;
+        color: system.$black-2;
+        text-transform: uppercase;
+        border-bottom: 1px solid transparent;  
+        &:hover{
+            border-bottom: 1px solid system.$magenta;
+        }
+    }
+    .back_btn{
+        background-image: url('../../../../public/assets/icons/back_arrow_icon.svg');
+        background-repeat: no-repeat;
+        background-size: 12px auto;
+        background-position: left center;
+        padding-left: 18px;        
+    }
+    .bullet{
+        @include system.font-level-11; 
+        color: system.$magenta;
+        margin: 0 5px;
+    }
+}

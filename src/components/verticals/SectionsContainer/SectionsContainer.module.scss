@@ -1,0 +1,60 @@
+@use "@/styles/system";
+
+.wrapper{
+    @include system.container-width-1;
+    display: grid;
+    grid-template-areas: 'col-left';
+    grid-template-columns: 100%;       
+    padding-top: 30px;
+    padding-bottom: 15px;
+    @media screen and (min-width: 1200px){        
+        grid-template-areas: 'col-left col-right';
+        grid-template-columns:
+        calc(100% - (330px))
+        300px
+        ; 
+        column-gap: 30px;
+    }
+
+    .col_left{
+        grid-area: col-left;        
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;        
+        padding-top: 25px;    
+        @media screen and (min-width: 769px){
+            row-gap: 60px;
+        }   
+        .title{
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            @include system.font-level-8;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: system.$magenta;
+            margin-bottom: 35px;
+            .icon{
+                height: 28px;
+                width: auto;
+            }
+        }             
+    }
+
+    .col_right{        
+        display: none;
+        @media screen and (min-width: 1200px){
+            display: block;
+            grid-area: col-right;
+            position: relative;
+            padding-bottom: 15px;
+        }       
+        .ad_wrapper{
+            position: sticky;
+            top: 100px;
+            background-color: #e3e3e3;
+            width: 100%;
+            height: 600px;
+        }
+    }
+}

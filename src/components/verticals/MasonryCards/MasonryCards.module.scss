@@ -1,0 +1,26 @@
+.wrapper{
+    margin-bottom: 18px;
+    @media screen and (min-width: 769px){
+        display: grid;  
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .col_sticky{
+        margin-bottom: 18px;
+        @media screen and (min-width: 769px){
+            margin-bottom: 0;
+        }        
+    }
+
+    .col_masonry{        
+        @media screen and (min-width: 769px){
+            column-count: 2;
+            column-gap: 18px;
+            > article a{
+                break-inside: avoid;
+                margin-bottom: 18px; 
+            }
+        }        
+    }
+}

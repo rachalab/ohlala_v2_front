@@ -1,0 +1,11 @@
+@use "@/styles/system";
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 18px;    
+    @media screen and (max-width: 768px){
+        grid-template-columns: 1fr;
+    }
+}

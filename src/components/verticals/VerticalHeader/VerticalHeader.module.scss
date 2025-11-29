@@ -1,0 +1,12 @@
+@use "@/styles/system";
+
+.wrapper{
+    @include system.container-width-1;
+    .title{
+        font-family: 'PPEiko',  Helvetica, sans-serif;
+        @include system.font-level-1;        
+        font-weight: 700;
+        color: system.$magenta;
+        margin-top: 10px;
+    }
+}

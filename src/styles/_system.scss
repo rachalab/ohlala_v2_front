@@ -1,82 +1,125 @@
+// Theme Colors
 
-/* Fonts */
+$black-1: #1E1E1E;
+$black-2: #1A202C;
+$gray-1: #5E5E5E;
+$gray-2: #757575;
+$gray-3: #A0A0A0;
+$gray-4: #BEBEBE;
+$gray-5: #d4d4d4;
+$gray-6: #F7F7F7;
+$white: #FFFFFF;
+$yellow: #FFED4F;
+$magenta: #ED2D6E;
+$purple-blue: #5627FF;
 
-
-/*Custom*/
-@font-face {
-	font-family: 'PPEiko';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url('/fonts/PPEiko-Bold.woff2') format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
-		U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-	font-family: 'PPEiko';
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url('/fonts/PPEiko-Medium.woff2') format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
-		U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-	font-family: 'PPEiko';
-	font-style: normal;
-	font-weight: 900;
-	font-display: swap;
-	src: url('/fonts/PPEiko-Black.woff2') format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
-		U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url('/fonts/Inter_Regular.woff2') format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
-		U+2215, U+FEFF, U+FFFD;
-}
+//font-family: 'PPEiko',  Helvetica, sans-serif;
+//font-family: 'Inter',  Helvetica, sans-serif;
 
 
-
-/* Colors */
-
-
-$black: #000000;
-$white: #fff;
-$red: #EF3824;
-
-
-/* Font Levels */
+// Typography Levels
 
 @mixin font-level-1 {
-    font-size: 48px;
-    font-family: 'PPEiko',  Helvetica, sans-serif;
+    font-size: 68px;
 }
-
 
 @mixin font-level-2 {
-    font-size: 32px;
-    font-family: 'PPEiko',  Helvetica, sans-serif;
+    font-size: 48px;
 }
-
 
 @mixin font-level-3 {
-    font-size: 24px;
-    font-family: 'PPEiko',  Helvetica, sans-serif;
+    font-size: 40px;
 }
 
-@mixin text {
-    font-size: 16px;
-    font-family: 'Inter',  Helvetica, sans-serif;
+@mixin font-level-4 {
+    font-size: 36px;
+}
+
+@mixin font-level-5 {
+    font-size: 30px;
+}
+
+@mixin font-level-6 {
+    font-size: 28px;
+}
+
+@mixin font-level-7 {
+    font-size: 24px;
+}
+
+@mixin font-level-8 {
+    font-size: 22px;
+}
+
+@mixin font-level-9 {
+    font-size: 20px;
+    @media screen and (max-width: 768px){
+        font-size: 22px;
+    }
+}
+
+@mixin font-level-10 {
+    font-size: 18px;
+}
+
+@mixin font-level-11 {
+    font-size: 16px;    
+}
+
+@mixin font-level-12 {    
+    font-size: 11.5px;
+    @media screen and (min-width: 769px){
+        font-size: 14px;        
+    }
+}
+
+@mixin font-level-13 {
+    font-size: 12px;
+}
+
+
+// Container Width
+
+@mixin container-width-1 {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+// Buttons
+
+@mixin button($variant: default) {    
+    display: inline-block;
+    font-family: 'InterOh',  Helvetica, sans-serif;
+    @include font-level-12;  
+    font-weight: 500;
+    color: $black-2;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 50px;
+    transition: all .1s ease-out;    
+
+    @if $variant == primaryYellow {
+        background-color: $yellow;
+        @media screen and (min-width: 1024px){
+            &:hover{
+                background-color: $black-2;
+                color: $white;
+            }
+        }
+    }
+
+    @if $variant == secondary {
+        border: 1px solid $magenta;
+        @media screen and (min-width: 1024px){
+            &:hover{
+                background-color: $magenta;
+                color: $white;
+            }
+        }
+    }
+
 }
