@@ -112,5 +112,8 @@ button{
 }
 
 #main-container{
-	padding-top: 110px;
+	padding-top: 90px;
+	@media screen and (min-width: 769px){
+		padding-top: 110px;
+	}
 }

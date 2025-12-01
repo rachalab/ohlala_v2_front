@@ -20,9 +20,9 @@
         grid-area: col-left;        
         display: flex;
         flex-direction: column;
-        row-gap: 30px;        
-        padding-top: 25px;    
+        row-gap: 30px;       
         @media screen and (min-width: 769px){
+            padding-top: 25px;
             row-gap: 60px;
         }   
         .title{

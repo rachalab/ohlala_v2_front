@@ -28,7 +28,10 @@ $purple-blue: #5627FF;
 }
 
 @mixin font-level-3 {
-    font-size: 40px;
+    font-size: 25px;
+    @media screen and (min-width: 769px){
+        font-size: 40px;
+    }
 }
 
 @mixin font-level-4 {
@@ -64,6 +67,9 @@ $purple-blue: #5627FF;
 
 @mixin font-level-11 {
     font-size: 16px;    
+    @media screen and (min-width: 769px){
+        font-size: 16px;         
+    }
 }
 
 @mixin font-level-12 {    
@@ -74,7 +80,10 @@ $purple-blue: #5627FF;
 }
 
 @mixin font-level-13 {
-    font-size: 12px;
+    font-size: 10px;
+    @media screen and (min-width: 769px){
+        font-size: 12px;        
+    }
 }
 
 
@@ -98,9 +107,12 @@ $purple-blue: #5627FF;
     color: $black-2;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 8px 16px;
+    padding: 7px 12px;
     border-radius: 50px;
     transition: all .1s ease-out;    
+    @media screen and (min-width: 769px){
+        padding: 8px 16px;
+    }
 
     @if $variant == primaryYellow {
         background-color: $yellow;

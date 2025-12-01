@@ -2,28 +2,45 @@
 
 .wrapper{
     border-top: 1px solid system.$gray-5;
-    margin-top: 40px;
+    margin-top: 20px;
+    @media screen and (min-width: 769px){
+        margin-top: 40px;
+    }
 
     .top_cont{
         @include system.container-width-1;        
         display: grid;
-        grid-template-areas: 'col-one col-two col-three col-four';
-        grid-template-columns:
-        50% 20% 20% 10%
-        ;
-        padding: 40px 15px;
+        grid-template-areas: 'col-one col-four' 'col-two col-three';        
+        padding: 30px 15px 25px 15px;
+        @media screen and (min-width: 769px){
+            grid-template-areas: 'col-one col-two col-three col-four';
+            grid-template-columns:
+            50% 20% 20% 10%
+            ;
+            padding: 40px 15px;
+        }
 
         .col_one{
             grid-area: col-one;
+            margin-bottom: 30px;
+            @media screen and (min-width: 769px){
+                margin-bottom: 0px;
+            }
             .brand{
-                width: 145px;
+                width: 125px;
                 height: auto;
-                margin-bottom: 22px;
+                margin-bottom: 22px;                
+                @media screen and (min-width: 769px){
+                    width: 145px;
+                }
             }
             .social_media{
                 display: flex;
                 align-items: center;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
+                @media screen and (min-width: 769px){
+                    margin-bottom: 20px;
+                }
                 a{
                     filter: grayscale(100%);
                     border-bottom: none;
@@ -112,14 +129,18 @@
             display: flex;
             justify-content: flex-end;
             .go_to_btn{
-                width: 48px;
-                height: 48px;
+                width: 38px;
+                height: 38px;
                 border-radius: 50%;
                 border: 1.5px solid system.$magenta;
                 background-image: url('../../../../public/assets/icons/top_arrow_black.svg');
                 background-repeat: no-repeat;
                 background-size: 45% auto;
                 background-position: center 45%;
+                @media screen and (min-width: 769px){
+                    width: 48px;
+                    height: 48px;
+                }
                 &:hover{
                     background-color: system.$magenta;
                     background-image: url('../../../../public/assets/icons/top_arrow_white.svg');
@@ -162,18 +183,27 @@
         width: 100%;
         max-width: 1270px;
         margin: 0 auto;
-        padding: 30px 0;
+        padding: 15px 15px 30px 15px;;
         border-top: 1px solid system.$gray-5;
         display: grid;
         grid-template-areas: 'col-one col-two';
         grid-template-columns:
-        50% 50%
+        45% 55%
         ;
+        @media screen and (min-width: 769px){
+            padding: 30px 0;
+            grid-template-columns:
+            50% 50%
+            ;
+        }
         a, p{
-            @include system.font-level-12;
+            @include system.font-level-13;
             line-height: 120%;
             color: system.$gray-1;
-            border-bottom: 1px solid transparent;
+            border-bottom: 1px solid transparent;  
+            @media screen and (min-width: 769px){
+                @include system.font-level-12;
+            }
         }
         a{
             &:hover{
@@ -191,20 +221,55 @@
         .col_one{
             grid-area: col-one;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
+            @media screen and (min-width: 769px){
+                flex-direction: row;
+                align-items: center;
+            }
+            hr{
+                display: none;
+                @media screen and (min-width: 769px){
+                    display: block;
+                }
+            }
+            a{
+                margin-bottom: 5px;
+                @media screen and (min-width: 769px){
+                    margin-bottom: 0px;
+                }
+            }
         }
         .col_two{
             grid-area: col-two;
             display: flex;
-            align-items: center;
-            justify-content: flex-end;
+            flex-direction: row;
+            align-items: flex-start;
+            @media screen and (min-width: 769px){
+                align-items: center;
+                justify-content: flex-end;
+            }
             .data_fiscal{
+                display: flex;
                 margin-right: 10px;
                 img{
                     width: 28px;
                     height: auto;
                 }
             }
+            .legal{
+                display: block;
+                @media screen and (min-width: 769px){
+                    display: flex;
+                    flex-direction: row;
+                }   
+                hr{
+                    display: none;
+                    @media screen and (min-width: 769px){
+                        display: block;
+                    }
+                }
+            }            
         }
     }
 }

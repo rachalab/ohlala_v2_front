@@ -88,10 +88,12 @@ export default function Footer(){
         <div className={styles.col_two}>
           <a href="#" rel="noopener noreferrer" target="_blank" className={styles.data_fiscal}>
             <img src="/assets/images/data_fiscal.jpg" alt="Data fiscal" />
-          </a>          
-          <p>Copyright 2025 SA LA NACIÓN</p>
-          <hr />
-          <p>Todos los derechos reservados.</p>          
+          </a> 
+          <div className={styles.legal}>       
+            <p>Copyright 2025 SA LA NACIÓN</p>
+            <hr />
+            <p>Todos los derechos reservados.</p>    
+          </div>        
         </div>
 
       </div>
