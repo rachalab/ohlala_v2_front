@@ -4,6 +4,9 @@
     background-color: system.$gray-6;
     width: 100%;
     margin-bottom: -40px;
+    @media screen and (max-width: 768px){
+        display: none;
+    }
     .wrapper{
         @include system.container-width-1;        
         display: grid;

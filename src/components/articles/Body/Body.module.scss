@@ -3,43 +3,40 @@
 .wrapper{
     @include system.container-width-1;
     display: grid;
-    grid-template-areas: 'share block';
-    grid-template-columns:    
-    60px
-    calc(100% - (115px))
-    ;
+    grid-template-areas: 'share' 'block';
+    grid-template-columns: 100% 100%;
     column-gap: 55px;
     margin-bottom: 90px;
+    @media screen and (min-width: 1200px){        
+        grid-template-areas: 'share block';
+        grid-template-columns:    
+        60px
+        calc(100% - (115px))
+        ;
+        column-gap: 55px;
+        margin-bottom: 90px;
+    }
 
     .share_wrapper{
         grid-area: share;
         position: relative;
-        padding-bottom: 15px;
+        @media screen and (min-width: 1200px){     
+            padding-bottom: 15px;
+        }
     }                
 
     .blocks{     
         grid-area: block;       
-        display: grid;
-        grid-template-areas: 'col-left col-right';
-        grid-template-columns:
-        calc(100% - (330px))
-        300px
-        ;
-        column-gap: 30px;
-
-        &:first-child{
-            .paragraph{
-                &:first-of-type{
-                    &::first-letter {
-                        font-size: 58px; 
-                        float: left; 
-                        margin-right: 8px; 
-                        font-family: 'PPEiko',  Helvetica, sans-serif;
-                        font-weight: 700;
-                        color: system.$magenta;
-                    }
-                }
-            }
+        display: grid;      
+        grid-template-areas: 'col-left';
+        grid-template-columns: 100%;       
+        @media screen and (min-width: 1200px){        
+            grid-template-areas: 'col-left col-right';
+            grid-template-columns:
+            calc(100% - (330px))
+            300px
+            ; 
+            column-gap: 30px;
         }
 
         .col_left{
@@ -51,7 +48,21 @@
                 color: system.$black-2;
                 line-height: 152%; 
                 padding-top: 10px;
-                margin-bottom: 10px;                                   
+                margin-bottom: 10px;  
+                &:first-of-type{
+                    &::first-letter {
+                        font-size: 47px; 
+                        line-height: 100%;
+                        float: left; 
+                        margin-right: 8px; 
+                        font-family: 'PPEiko',  Helvetica, sans-serif;
+                        font-weight: 700;
+                        color: system.$magenta;
+                        @media screen and (min-width: 1200px){ 
+                            font-size: 58px; 
+                        }
+                    }
+                }                                 
                 strong{
                     font-weight: 600;
                 }                
@@ -98,10 +109,14 @@
             }         
         }
 
-        .col_right{        
-            grid-area: col-right;
-            position: relative;
-            padding-bottom: 15px;
+        .col_right{       
+            grid-area: col-right; 
+            display: none;
+            @media screen and (min-width: 1200px){                
+                display: block; 
+                position: relative;
+                padding-bottom: 15px;                
+            }
                 
             .ad_wrapper{
                 position: sticky;

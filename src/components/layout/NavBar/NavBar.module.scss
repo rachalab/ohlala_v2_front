@@ -53,8 +53,11 @@
                 @include system.button(primaryYellow);               
             }
             .search_btn{
-                height: 26px;
+                height: 24px;
                 width: auto;
+                @media screen and (min-width: 769px){
+                    height: 26px;
+                }
             }
             .menu_btn{
                 display: flex;
@@ -63,12 +66,18 @@
                 height: 25px;
                 width: 30px;
                 .hamburger{
-                    height: 22px;
+                    height: 20px;
                     width: auto;
+                    @media screen and (min-width: 769px){
+                        height: 22px;
+                    }
                 } 
                 .close{
-                    height: 24px;
+                    height: 22px;
                     width: auto;
+                    @media screen and (min-width: 769px){
+                        height: 24px;
+                    }
                 }               
             }
         }        
@@ -113,7 +122,7 @@
         .link{
             width: fit-content;
             @include system.font-level-11;        
-            font-weight: 500;
+            font-weight: 400;
             color: system.$gray-2;
             text-transform: uppercase;
             line-height: 120%;
@@ -121,6 +130,7 @@
             margin-bottom: 8px;
             @media screen and (min-width: 769px){
                 @include system.font-level-12; 
+                font-weight: 500;
             }
             &:hover{
                 color: system.$black-1;
@@ -128,7 +138,10 @@
             }
             &:first-child{
                 color: system.$magenta;
-                font-weight: 700;
+                font-weight: 600;
+                @media screen and (min-width: 769px){
+                    font-weight: 700;
+                }
             }
         }
     }

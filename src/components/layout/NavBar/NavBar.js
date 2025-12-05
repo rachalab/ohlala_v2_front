@@ -39,46 +39,46 @@ export default function NavBar(){
         {menuState &&
           <nav className={styles.menu}> 
             <div className={styles.col_1}>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Actualidad</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Famosos</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Opinión</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Economía</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Sociedad</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Actualidad</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Famosos</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Opinión</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Economía</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Sociedad</Link>
             </div>
             <div className={styles.col_2}>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Lifestyle</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Salud</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Historias</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Viajes</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Gastronomía</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Sexo</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Relaciones</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Maternidad</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Recetas</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Revista</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Lifestyle</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Salud</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Historias</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Viajes</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Gastronomía</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Sexo</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Relaciones</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Maternidad</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Recetas</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Revista</Link>
             </div>
             <div className={styles.col_3}>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Horóscopo</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Rituales</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Numerología</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Horóscopo</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Rituales</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Numerología</Link>
             </div>
             <div className={styles.col_4}>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Espectáculos</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Series</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Películas</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Teatro</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Libros</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Música</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Espectáculos</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Series</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Películas</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Teatro</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Libros</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Música</Link>
             </div>
             <div className={styles.col_5}>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Moda</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Moda</Link>
             </div>
             <div className={styles.col_6}>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Belleza</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Belleza</Link>
             </div>
             <div className={styles.col_7}>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Decoración</Link>
-              <Link href="#" className={styles.link} onClick={ () => changeMenuState() }>Jardín</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Decoración</Link>
+              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Jardín</Link>
             </div>
           </nav>
         }

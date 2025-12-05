@@ -20,11 +20,17 @@ $purple-blue: #5627FF;
 // Typography Levels
 
 @mixin font-level-1 {
-    font-size: 68px;
+    font-size: 49px;
+    @media screen and (min-width: 768px){
+        font-size: 68px;
+    }
 }
 
 @mixin font-level-2 {
-    font-size: 48px;
+    font-size: 30px;
+    @media screen and (min-width: 768px){
+        font-size: 48px;
+    }
 }
 
 @mixin font-level-3 {
@@ -51,29 +57,35 @@ $purple-blue: #5627FF;
 }
 
 @mixin font-level-8 {
-    font-size: 22px;
+    font-size: 20px;
+    @media screen and (min-width: 769px){
+        font-size: 22px;        
+    }
 }
 
 @mixin font-level-9 {
-    font-size: 20px;
-    @media screen and (max-width: 768px){
-        font-size: 22px;
+    font-size: 22px;    
+    @media screen and (min-width: 769px){
+        font-size: 20px;        
     }
 }
 
 @mixin font-level-10 {
-    font-size: 18px;
+    font-size: 17px;
+    @media screen and (min-width: 769px){
+        font-size: 18px;         
+    }
 }
 
 @mixin font-level-11 {
-    font-size: 16px;    
+    font-size: 15.5px;    
     @media screen and (min-width: 769px){
         font-size: 16px;         
     }
 }
 
 @mixin font-level-12 {    
-    font-size: 11.5px;
+    font-size: 12px;
     @media screen and (min-width: 769px){
         font-size: 14px;        
     }

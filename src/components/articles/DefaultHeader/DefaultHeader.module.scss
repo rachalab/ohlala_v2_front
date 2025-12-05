@@ -2,23 +2,34 @@
 
 .wrapper{
     @include system.container-width-1;
-    padding-bottom: 45px;
+    padding-bottom: 35px;
+    @media screen and (min-width: 769px){
+        padding-bottom: 45px; 
+    }
     .title{
         font-family: 'PPEiko',  Helvetica, sans-serif;
         @include system.font-level-2;        
         font-weight: 700;
         color: system.$black-2;
-        line-height: 118%;
+        line-height: 115%;
         max-width: 1200px;
-        margin-top: 30px;
+        margin-top: 20px;
+        @media screen and (min-width: 769px){
+            line-height: 118%;   
+            margin-top: 30px;
+        }
     }
     .summary{
-        @include system.font-level-8;   
+        @include system.font-level-10;   
         font-weight: 400;
         color: system.$black-2;
-        line-height: 150%; 
+        line-height: 145%; 
         max-width: 1100px;
         margin-top: 15px;
+        @media screen and (min-width: 769px){
+            @include system.font-level-8;  
+            line-height: 150%;  
+        }
     }
     .credits{
         position: relative;

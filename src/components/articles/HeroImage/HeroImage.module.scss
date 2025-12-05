@@ -4,7 +4,10 @@
     @include system.container-width-1;
     display: flex;
     flex-direction: column;    
-    padding-bottom: 55px;
+    padding-bottom: 35px;
+    @media screen and (min-width: 1200px){
+        padding-bottom: 55px; 
+    }
     .image{
         width: 100%;
         height: auto;
