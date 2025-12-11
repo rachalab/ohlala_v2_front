@@ -1,0 +1,45 @@
+@use "@/styles/system";
+
+.mobile_wrapper{
+    display: block; 
+    padding-bottom: 20px;
+    @media screen and (min-width: 1200px){
+        display: none; 
+    }
+    .btn{
+        @include system.button(secondary);
+    }
+}
+
+.desk_wrapper{    
+    display: none;   
+    @media screen and (min-width: 1200px){
+        position: sticky;
+        top: 100px;
+        width: 100%;
+        border-right: 1px solid system.$gray-5;
+        padding: 10px 0 10px 8px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;    
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        width: 48%;
+        height: auto;
+        filter: grayscale(100%);
+        &:hover{
+            filter: grayscale(0%);
+        }
+        .twitter{
+            width: 100%;
+        }
+        .whatsapp{
+            width: 100%;
+        }
+        .facebook{
+            width: 65%;
+        }
+    }
+}

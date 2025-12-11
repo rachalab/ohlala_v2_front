@@ -1,0 +1,33 @@
+.swiper{
+  .swiper-wrapper{
+    .swiper-slide {
+      box-sizing: border-box;
+      width: auto;
+    }
+  }
+  
+  // Estilos TagSwiper
+
+  &.tag-swiper{
+    .swiper-wrapper{  
+      .swiper-slide {
+        margin-left: 10px;
+        @media screen and (min-width: 769px){
+          margin-left: 15px;                  
+        }
+        &:first-of-type{
+          margin-left: 10px;
+          @media screen and (min-width: 769px){
+            margin-left: 0;                  
+          }
+        }        
+        &:last-of-type{
+          margin-right: 15px;
+          @media screen and (min-width: 769px){
+            margin-right: 0;                  
+          }
+        }
+      }
+    } 
+  }
+}

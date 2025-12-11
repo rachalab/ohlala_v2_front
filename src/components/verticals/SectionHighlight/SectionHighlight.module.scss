@@ -1,0 +1,83 @@
+@use "@/styles/system";
+
+.container{
+    background-color: system.$purple-blue;
+    width: 100%;
+    margin: 30px 0;
+    @media screen and (min-width: 769px){
+        margin: 15px 0;
+    }
+    .wrapper{
+        display: grid;
+        grid-template-areas: 'text-cont' 'img-cont';
+        grid-template-columns: 100% 100%;        
+        @media screen and (min-width: 769px){
+            @include system.container-width-1;
+            display: grid;
+            grid-template-areas: 'img-cont text-cont';
+            grid-template-columns:
+            36.1%
+            calc(63.9% - 40px)        
+            ;
+            gap: 40px;
+        }
+        @media screen and (min-width: 769) and (max-width: 1200px){
+            grid-template-columns: 48% 52%;
+            padding-left: 0;
+            gap: 0;
+        }
+        .img_cont{
+            grid-area: img-cont;
+            height: 320px;            
+            display: flex;
+            justify-content: flex-end;
+            overflow: hidden;
+            @media screen and (min-width: 769px){
+                height: 100%;
+            }
+            img{
+                height: 100%;
+                width: auto;
+            }
+        }
+        .text_cont{
+            grid-area: text-cont;            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;     
+            padding: 30px 30px 0 30px;      
+            @media screen and (min-width: 769px){
+                min-height: 400px;
+                padding: 60px 0;
+            }
+            .tag{
+                @include system.font-level-12;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: system.$white;
+                margin-bottom: 12px;
+                @media screen and (min-width: 769px){
+                    @include system.font-level-11;
+                }
+            }
+            .title{
+                @include system.font-level-3;
+                font-family: 'PPEiko',  Helvetica, sans-serif;
+                font-weight: 700;
+                line-height: 130%;
+                color: system.$white;
+            }
+            .author{
+                position: relative;
+                @include system.font-level-12;
+                font-weight: 400;
+                color: system.$white;
+                margin-top: 18px;
+                strong{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
