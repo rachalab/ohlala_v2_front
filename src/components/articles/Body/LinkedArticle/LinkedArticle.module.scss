@@ -1,19 +1,30 @@
 @use "@/styles/system";
 
 .container{
-    padding: 35px 0;
+    padding: 20px 0;
+    @media screen and (min-width: 769px){  
+        padding: 25px 0;
+    }
     .wrapper{
         display: grid;
-        grid-template-areas: 'imagen text';                       
-        column-gap: 25px;
+        grid-template-areas: 'imagen text'; 
+        grid-template-columns: 50% 50%;
+        gap: 15px;                    
         padding: 15px 2px;
         border-top: 1px solid system.$gray-5;
-        border-bottom: 1px solid system.$gray-5;
+        border-bottom: 1px solid system.$gray-5;         
+        @media screen and (min-width: 769px){  
+            grid-template-columns: none;
+            column-gap: 25px;
+        }
         .image{
-            grid-area: imagen;        
-            width: 175px;
-            height: 175px;
+            grid-area: imagen;                  
+            aspect-ratio: 4 / 3;
             overflow: hidden;
+            @media screen and (min-width: 769px){  
+                width: 175px;
+                height: 175px;
+            }
             img{
                 width: 100%;
                 height: 100%;
@@ -24,12 +35,20 @@
             grid-area: text;
             display: flex;
             align-items: center;
+            padding-right: 15px;
+            @media screen and (min-width: 769px){  
+                padding-right: 0;
+            } 
             a{               
                 font-family: 'PPEiko',  Helvetica, sans-serif;                        
-                @include system.font-level-8;   
+                @include system.font-level-9;   
                 font-weight: 700;  
                 color: system.$black-2;
-                line-height: 140%;                                   
+                line-height: 130%;    
+                @media screen and (min-width: 769px){  
+                    @include system.font-level-8;
+                    line-height: 140%;
+                }                               
             } 
         }                                             
     }

@@ -2,7 +2,7 @@
 
 .wrapper{
     @include system.container-width-1;
-    padding-bottom: 35px;
+    padding-bottom: 30px;
     @media screen and (min-width: 769px){
         padding-bottom: 45px; 
     }

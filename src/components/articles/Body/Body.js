@@ -2,6 +2,7 @@ import ShareButtons from "./ShareButtons/ShareButtons";
 import LinkedArticle from "./LinkedArticle/LinkedArticle";
 import AuthorBio from "./AuthorBio/AuthorBio";
 import ArticleTags from "./ArticleTags/ArticleTags";
+import RecipeDetail from "./RecipeDetail/RecipeDetail";
 import styles from "./Body.module.scss"; 
 
 export default function Body(){
@@ -16,6 +17,9 @@ export default function Body(){
         <div className={styles.blocks}>
 
             <div className={styles.col_left}>
+
+                <RecipeDetail />
+                
                 <p className={styles.paragraph}>Llega a Buenos Aires una muestra única para amantes del cine, la velocidad y la historia de los vehículos: Iconos sobre ruedas, <a href="#" target="_blank">exposición de autos legendarios que marcaron una época</a>. ¿Cuándo vas a poder ver desde el Delorean de Volver al futuro al auto de Lady Di o la Ferrari de Diego Maradona? Te lo contamos, a continuación.</p>   
 
                 <div className={styles.horizontal_ad}>

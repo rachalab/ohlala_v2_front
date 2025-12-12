@@ -8,16 +8,23 @@
 
     .card{
         a{
-            display: grid;
-            grid-template-columns: 1fr 2fr;
+            display: flex;
+            flex-wrap: wrap;
             width: 100%;  
             background-color: system.$white;
-            border: 1px solid system.$gray-5;        
+            border: 1px solid system.$gray-5;
+            @media screen and (min-width: 769px){  
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+            }        
 
             .image_wrapper{
                 position: relative;
                 aspect-ratio: 16 / 10;
-                margin-right: 12px;
+                width: 100%;                
+                @media screen and (min-width: 769px){  
+                    margin-right: 12px;
+                }
                 .image{
                     position: absolute;
                     width: 100%;
@@ -37,22 +44,31 @@
                     position: relative;
                     display: flex;
                     align-items: center;
-                    @include system.font-level-9;
+                    @include system.font-level-10;
                     font-family: 'PPEiko',  Helvetica, sans-serif;
                     font-weight: 700;
                     line-height: 140%;
                     color: system.$black-2;
-                    padding-left: 90px;
+                    padding-left: 95px;
+                    @media screen and (min-width: 769px){  
+                        @include system.font-level-9;
+                        padding-left: 90px;
+                    }
                     &::before{
                         position: absolute;
                         display: flex;
                         align-items: center;
-                        left: 10px;
-                        font-size: 70px;
+                        left: 5px;
+                        font-size: 90px;
                         color: system.$magenta;
                         border-right: 1px solid system.$magenta;
                         height: 100%;
-                        width: 60px;
+                        width: 75px;
+                        @media screen and (min-width: 769px){  
+                            left: 10px;
+                            font-size: 70px;
+                            width: 60px;
+                        }
                     }
                 }
             }            
@@ -64,6 +80,12 @@
                     .title{
                         &::before{
                             content: '1';
+                            left: 10px;
+                            width: 70px;
+                            @media screen and (min-width: 769px){  
+                                left: 10px;
+                                width: 60px;
+                            }
                         }
                     }
                 }

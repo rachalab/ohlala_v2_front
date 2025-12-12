@@ -1,5 +1,8 @@
+import VideoHeader from "@/components/articles/VideoHeader/VideoHeader";
+import ImageHeader from "@/components/articles/ImageHeader/ImageHeader";
 import DefaultHeader from "@/components/articles/DefaultHeader/DefaultHeader";
 import HeroImage from "@/components/articles/HeroImage/HeroImage";
+import HeroRecipe from "@/components/articles/HeroRecipe/HeroRecipe";
 import Body from "@/components/articles/Body/Body";
 import ViewMore from "@/components/articles/ViewMore/ViewMore";
 
@@ -11,10 +14,13 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-        <DefaultHeader />
-        <HeroImage />
-        <Body />
-        <ViewMore />
+      <VideoHeader />
+      <ImageHeader />
+      <DefaultHeader />
+      <HeroImage /> 
+      <HeroRecipe />        
+      <Body />
+      <ViewMore />
     </>
   );
 }

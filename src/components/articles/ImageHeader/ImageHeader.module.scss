@@ -1,0 +1,96 @@
+@use "@/styles/system";
+
+.container{
+    width: 100%;
+    .wrapper{
+        @include system.container-width-1;        
+        padding-bottom: 35px;
+        @media screen and (min-width: 769px){
+            padding-bottom: 60px; 
+        }        
+        .content{
+            display: grid;
+            grid-template-areas: 'col-left' 'col-right'; 
+            grid-template-columns: 100%;            
+            @media screen and (min-width: 1200px){
+                grid-template-areas: 'col-left col-right';            
+                grid-template-columns:
+                calc(40% - 20px)
+                calc(60% - 20px);
+                column-gap: 40px;
+            }
+
+            .col_left{
+                grid-area: col-left;
+                .title{
+                    font-family: 'PPEiko',  Helvetica, sans-serif;
+                    @include system.font-level-4;        
+                    font-weight: 700;
+                    color: system.$black-2;
+                    line-height: 115%;
+                    max-width: 1200px;
+                    margin-top: 20px;
+                    @media screen and (min-width: 769px){
+                        @include system.font-level-4;
+                        line-height: 118%;  
+                    }
+                }
+                .summary{
+                    @include system.font-level-10;   
+                    font-weight: 400;
+                    color: system.$black-2;
+                    line-height: 145%; 
+                    max-width: 1100px;
+                    margin-top: 15px;
+                    @media screen and (min-width: 769px){
+                        @include system.font-level-10;  
+                        line-height: 150%;  
+                    }
+                }
+                .credits{
+                    position: relative;
+                    padding-top: 18px;
+                    margin-top: 20px;
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        left: 0;
+                        width: 50px;
+                        border-top: 1px solid system.$magenta;
+                    }
+                    p{
+                        @include system.font-level-12;
+                        font-weight: 400;
+                        line-height: 160%;            
+                        strong{
+                            font-weight: 600;
+                        }
+                        &.author{
+                            color: system.$black-2;
+                        }
+                        &.date{
+                            color: system.$gray-3;
+                        }
+                        .bullet{
+                            @include system.font-level-12; 
+                            color: system.$magenta;
+                            margin: 0 5px;
+                        }
+                    }
+                }
+            }
+        
+            .col_right{    
+                margin-top: 30px;   
+                @media screen and (min-width: 1199px){
+                    margin-top: 0;  
+                }        
+                .image{
+                    width: 100%;
+                    height: auto;
+                }
+            }  
+        }              
+    }
+}

@@ -2,7 +2,10 @@
 
 .mobile_wrapper{
     display: block; 
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    @media screen and (min-width: 769px) and (max-width: 1199px){ 
+        padding-bottom: 35px;
+    }
     @media screen and (min-width: 1200px){
         display: none; 
     }

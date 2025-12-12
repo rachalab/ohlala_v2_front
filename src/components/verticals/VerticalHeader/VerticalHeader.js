@@ -5,7 +5,7 @@ export default function VerticalHeader(){
 
   return (
     <div className={styles.wrapper}>
-        <Breadcrumb />
+        <Breadcrumb colorMode={0} />
         <h1 className={styles.title}>Espectáculos</h1>
     </div>
   )

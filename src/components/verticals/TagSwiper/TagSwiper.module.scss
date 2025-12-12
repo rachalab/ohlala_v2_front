@@ -2,9 +2,11 @@
 
 .wrapper{
     width: 100%;
-    margin-bottom: 20px;
+    padding-top: 35px;
+    margin-bottom: 20px;    
     @media screen and (min-width: 769px){
-        @include system.container-width-1;    
+        @include system.container-width-1; 
+        padding-top: 45px;   
         margin-bottom: 20px;               
     }
     .tag_filter{

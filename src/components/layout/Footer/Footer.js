@@ -12,7 +12,7 @@ export default function Footer(){
   }
 
   return(
-    <footer className={styles.wrapper}>
+    <footer className={styles.container}>
 
       <div className={styles.top_cont}>
 
@@ -76,6 +76,7 @@ export default function Footer(){
       </div>
 
       <div className={styles.bottom_cont}>
+        <div className={styles.wrapper}>
 
         <div className={styles.col_one}>
           <a href="#" rel="noopener noreferrer" target="_blank">Términos y Condiciones</a>
@@ -96,6 +97,7 @@ export default function Footer(){
           </div>        
         </div>
 
+        </div>
       </div>
       
     </footer>
