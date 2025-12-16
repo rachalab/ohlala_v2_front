@@ -1,5 +1,5 @@
 import DefaultHeader from "@/components/articles/DefaultHeader/DefaultHeader";
-import HeroImage from "@/components/articles/HeroImage/HeroImage";
+import HeroRecipe from "@/components/articles/HeroRecipe/HeroRecipe";
 import Body from "@/components/articles/Body/Body";
 import ViewMore from "@/components/articles/ViewMore/ViewMore";
 
@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <>
       <DefaultHeader />
-      <HeroImage /> 
+      <HeroRecipe />
       <Body />
       <ViewMore />
     </>

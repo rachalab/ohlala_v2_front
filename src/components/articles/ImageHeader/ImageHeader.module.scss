@@ -2,12 +2,15 @@
 
 .container{
     width: 100%;
+    margin-bottom: 35px;
+    @media screen and (min-width: 769px){
+        margin-bottom: 45px;
+    }
+    @media screen and (min-width: 1200px){
+        margin-bottom: 60px; 
+    }
     .wrapper{
-        @include system.container-width-1;        
-        padding-bottom: 35px;
-        @media screen and (min-width: 769px){
-            padding-bottom: 60px; 
-        }        
+        @include system.container-width-1;               
         .content{
             display: grid;
             grid-template-areas: 'col-left' 'col-right'; 
@@ -81,7 +84,8 @@
                 }
             }
         
-            .col_right{    
+            .col_right{   
+                display: flex; 
                 margin-top: 30px;   
                 @media screen and (min-width: 1199px){
                     margin-top: 0;  

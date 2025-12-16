@@ -9,7 +9,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-        <VerticalHeader />
+        <VerticalHeader title="Espectáculos" />
         <SectionsContainer />
     </>
   );

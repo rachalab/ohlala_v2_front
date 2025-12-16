@@ -1,5 +1,4 @@
-import DefaultHeader from "@/components/articles/DefaultHeader/DefaultHeader";
-import HeroImage from "@/components/articles/HeroImage/HeroImage";
+import VideoHeader from "@/components/articles/VideoHeader/VideoHeader";
 import Body from "@/components/articles/Body/Body";
 import ViewMore from "@/components/articles/ViewMore/ViewMore";
 
@@ -11,8 +10,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <DefaultHeader />
-      <HeroImage /> 
+      <VideoHeader />
       <Body />
       <ViewMore />
     </>

@@ -3,6 +3,13 @@
 .container{
     background-color: system.$black-1;
     width: 100%;
+    margin-bottom: 35px;
+    @media screen and (min-width: 769px){
+        margin-bottom: 45px;
+    }
+    @media screen and (min-width: 1200px){
+        margin-bottom: 60px; 
+    } 
     .wrapper{
         @include system.container-width-1;        
         padding-bottom: 35px;

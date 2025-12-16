@@ -1,5 +1,7 @@
 import MostReadCards from "./MostReadCards/MostReadCards";
 import CardGridPagination from "./CardGridPagination/CardGridPagination";
+import NewsletterCard from "../NewsletterCard/NewsletterCard";
+import MagazineCard from "../MagazineCard/MagazineCard";
 import styles from "./ViewMore.module.scss"; 
 
 export default function ViewMore(){
@@ -16,6 +18,9 @@ export default function ViewMore(){
                     </h4>
                     <MostReadCards />
                 </section>
+
+                <NewsletterCard />
+                <MagazineCard />
                 
                 <section className={styles.section}>
                     <h4 className={styles.title}>
