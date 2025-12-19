@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <>
       <VideoHeader />
-      <Body />
+      <Body data={{recipe:false}}/>
       <ViewMore />
     </>
   );
