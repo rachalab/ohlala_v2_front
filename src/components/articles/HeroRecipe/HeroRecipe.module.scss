@@ -1,0 +1,77 @@
+@use "@/styles/system";
+
+.container{
+    @include system.container-width-1;
+    margin-bottom: 45px;
+    @media screen and (min-width: 1200px){
+        margin-bottom: 60px; 
+    }
+
+    .wrapper{            
+        display: grid;
+        grid-template-areas: 'col-right' 'col-left';     
+        grid-template-columns: 100% 100%; 
+        border: 1px solid system.$gray-5;     
+        @media screen and (min-width: 769px){ 
+            grid-template-areas: 'col-left col-right';     
+            grid-template-columns: 35% 65%; 
+        }   
+
+        .col_left{
+            grid-area: col-left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .key_data{
+                width: calc(100% - 30px);
+                padding: 10px 0;
+                border-bottom: 1px solid system.$gray-5;                
+                @media screen and (min-width: 1199px){
+                    width: 80%;
+                    padding-top: 0;
+                    padding-bottom: 20px;
+                    padding-left: 70px;
+                    margin-bottom: 20px;
+                }  
+                &:last-of-type{
+                    border-bottom: none;                    
+                    @media screen and (min-width: 1199px){
+                        padding-bottom: 0;
+                        margin-bottom: 0;
+                    }
+                }
+                .title{
+                    @include system.font-level-12; 
+                    font-weight: 500;
+                    line-height: 180%;
+                    text-transform: uppercase;
+                    color: system.$black-2;
+                }
+                .number{
+                    font-family: 'PPEiko',  Helvetica, sans-serif;
+                    @include system.font-level-3; 
+                    font-weight: 500;
+                    line-height: 100%;
+                    color: system.$magenta;
+                }
+            }
+
+        }
+
+        .col_right{
+            grid-area: col-right;
+            aspect-ratio: 5 / 3.2;
+            background-color: bisque;
+            overflow: hidden;
+            @media screen and (min-width: 769px) and (max-width: 1199px){  
+                aspect-ratio: 5 / 3.5;
+            }
+            .image{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

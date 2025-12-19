@@ -1,0 +1,23 @@
+@use "@/styles/system";
+
+.wrapper{
+    @include system.container-width-1;
+    .title{
+        font-family: 'PPEiko',  Helvetica, sans-serif;
+        @include system.font-level-4;        
+        font-weight: 700;
+        color: system.$black-2;
+        line-height: 110%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        @media screen and (min-width: 769px){
+            margin-top: 35px;
+            margin-bottom: 8px;
+        }
+    }
+    .number{
+        @include system.font-level-10; 
+        color: system.$magenta;
+        font-weight: 500;
+    }
+}

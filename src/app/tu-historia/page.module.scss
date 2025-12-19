@@ -1,0 +1,56 @@
+@use "@/styles/system";
+
+.image_hero{
+    @include system.container-width-1;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;     
+    margin-top: 20px;   
+    margin-bottom: 25px;
+    @media screen and (min-width: 769px){
+        aspect-ratio: 16 / 5.25;
+    } 
+    .image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;        
+    }
+}
+
+.content{
+    @include system.container-width-1;
+    margin-bottom: 60px;
+    @media screen and (min-width: 769px){
+        margin-bottom: 80px; 
+    }
+    .wrapper{
+        width: 100%;
+        @media screen and (min-width: 769px){
+            width: 70%;
+        }
+        p, ul li{
+            @include system.font-level-11;   
+            font-weight: 400;
+            color: system.$black-2;
+            line-height: 152%; 
+            margin-bottom: 18px;  
+        }
+        ul{
+            list-style: none;
+            li{
+                position: relative;
+                padding-left: 15px;
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;                    
+                    content: '•';
+                    color: system.$magenta;
+                }
+            }
+        }
+        .mail_btn{
+            @include system.button(primaryMagenta);
+            margin-top: 8px;  
+        }
+    }    
+}

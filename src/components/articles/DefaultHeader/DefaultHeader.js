@@ -6,7 +6,7 @@ export default function DefaultHeader(){
   return (
     <div className={styles.wrapper}>
 
-        <Breadcrumb />
+        <Breadcrumb colorMode={0} />
 
         <h1 className={styles.title}>Del Delorean de Volver al futuro al auto de Lady Di: así es la expo para ver vehículos icónicos</h1>
 

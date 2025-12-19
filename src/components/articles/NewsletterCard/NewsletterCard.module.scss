@@ -1,0 +1,91 @@
+@use "@/styles/system";
+
+
+.wrapper{
+    background-color: system.$white;
+    border: 1px solid system.$gray-5;  
+    display: grid;
+    grid-template-areas: 'img-cont' 'text-cont'; 
+    grid-template-columns: 100%;
+    @media screen and (min-width: 769px){ 
+        grid-template-areas: 'img-cont text-cont'; 
+        grid-template-columns: 50% 50%;
+    }
+
+    .img_cont{
+        grid-area: img-cont;
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+        @media screen and (min-width: 769px){ 
+            aspect-ratio: auto;
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;                                    
+            @media screen and (min-width: 769px){ 
+                position: absolute;
+                right: 0;                
+                width: auto;
+            }
+        }
+    }
+
+    .text_cont{
+        grid-area: text-cont; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 15px 25px 15px;
+        @media screen and (min-width: 769px){ 
+            padding: 35px;
+        }
+        .title{
+            @include system.font-level-4;
+            font-family: 'PPEiko',  Helvetica, sans-serif;
+            font-weight: 700;
+            line-height: 140%;
+            color: system.$black-2;
+        }
+        .description{
+            @include system.font-level-11;   
+            font-weight: 400;
+            color: system.$black-2;
+            line-height: 152%; 
+            margin-top: 8px;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 25px;
+            @media screen and (min-width: 769px){ 
+                margin-top: 30px;
+            }
+            .label{
+                @include system.font-level-12;
+                margin-bottom: 6px;
+                @media screen and (min-width: 769px){ 
+                    @include system.font-level-13;
+                }
+            }
+            .input{
+                font-family: 'InterOh',  Helvetica, sans-serif;
+                width: 100%;
+                padding: 10px;
+                border: 1px solid system.$gray-5; 
+                @include system.font-level-11;
+                color: system.$black-2;
+                font-weight: 400;
+                margin-bottom: 15px;
+                &::placeholder{
+                    color: system.$gray-4;
+                }
+            }
+            .submit_btn{
+                @include system.button(primaryMagenta);
+            }
+        }
+    }    
+}

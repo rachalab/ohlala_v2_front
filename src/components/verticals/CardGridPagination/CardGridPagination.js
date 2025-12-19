@@ -51,6 +51,7 @@ export default function CardGridPagination(){
                         type='default'
                         textSize='s'
                         directionDesk='column'
+                        directionMobile='row'
                         imgUrl={card.imgUrl}
                         tag={card.tag}
                         title={card.title}

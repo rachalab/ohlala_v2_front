@@ -3,28 +3,37 @@
 .container{
     background-color: system.$gray-6;
     width: 100%;
-    margin-bottom: -40px;
-    @media screen and (max-width: 768px){
-        display: none;
+    margin-bottom: -20px;
+    @media screen and (min-width: 769px){  
+        margin-bottom: -40px;
     }
+    
     .wrapper{
         @include system.container-width-1;        
         display: grid;
-        grid-template-areas: 'col-left col-right';
-        grid-template-columns:
-        calc(100% - (330px))
-        300px
-        ;
-        column-gap: 30px;
+        grid-template-areas: 'col-left';        
         padding-top: 30px;
         padding-bottom: 15px;
+        @media screen and (min-width: 1200px){  
+            grid-template-areas: 'col-left col-right';
+            grid-template-columns:
+            calc(100% - (330px))
+            300px
+            ;
+            column-gap: 30px;
+        }
 
         .col_left{
             grid-area: col-left;        
             display: flex;
             flex-direction: column;
             row-gap: 60px;
-            padding-top: 25px;       
+            padding-top: 20px;   
+            row-gap: 45px;       
+            @media screen and (min-width: 769px){
+                padding-top: 25px;
+                row-gap: 60px;
+            }    
             .section{
                 .title{
                     display: flex;
@@ -34,22 +43,32 @@
                     font-weight: 400;
                     text-transform: uppercase;
                     color: system.$black-2;
-                    margin-bottom: 35px;
+                    margin-bottom: 20px;
+                    @media screen and (min-width: 769px){
+                        margin-bottom: 35px;
+                    }
                     .icon{
                         height: 28px;
                         width: auto;
                     }
                 }
                 &:last-of-type{
-                    margin-bottom: 80px;
+                    margin-bottom: 50px;
+                    @media screen and (min-width: 769px){
+                        margin-bottom: 80px;
+                    } 
                 }
             }                         
         }
 
         .col_right{        
-            grid-area: col-right;
-            position: relative;
-            padding-bottom: 15px;
+            grid-area: col-right;            
+            display: none;
+            @media screen and (min-width: 769px){ 
+                position: relative;
+                display: block;
+                padding-bottom: 15px;
+            }
             
             .ad_wrapper{
                 position: sticky;

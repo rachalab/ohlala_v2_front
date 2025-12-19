@@ -11,10 +11,10 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-        <DefaultHeader />
-        <HeroImage />
-        <Body />
-        <ViewMore />
+      <DefaultHeader />
+      <HeroImage /> 
+      <Body />
+      <ViewMore />
     </>
   );
 }

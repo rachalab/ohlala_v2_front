@@ -1,6 +1,10 @@
 @use "@/styles/system";
 
 .wrapper{
+    padding-top: 30px;
+    @media screen and (min-width: 769px){
+		padding-top: 40px;
+	}
     a{
         @include system.font-level-12;        
         font-weight: 600;
@@ -11,8 +15,7 @@
             border-bottom: 1px solid system.$magenta;
         }
     }
-    .back_btn{
-        background-image: url('../../../../public/assets/icons/back_arrow_icon.svg');
+    .back_btn{        
         background-repeat: no-repeat;
         background-size: 12px auto;
         background-position: left center;
@@ -22,5 +25,21 @@
         @include system.font-level-11; 
         color: system.$magenta;
         margin: 0 5px;
+    }
+    &.black{
+        a{
+            color: system.$black-2;
+        }
+        .back_btn{
+            background-image: url('../../../../public/assets/icons/back_arrow_icon.svg');    
+        }
+    }
+    &.white{
+        a{
+            color: system.$white;
+        }
+        .back_btn{
+            background-image: url('../../../../public/assets/icons/back_arrow_white_icon.svg');    
+        }
     }
 }
