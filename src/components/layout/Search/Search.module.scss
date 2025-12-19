@@ -1,0 +1,34 @@
+@use "@/styles/system";
+
+.wrapper{
+    position: relative;
+    width: 100%;
+    padding-bottom: 15px;    
+    .search_bar{
+        width: 100%;
+        font-family: 'InterOh',  Helvetica, sans-serif;
+        @include system.font-level-10;
+        font-weight: 400;
+        color: system.$black-2;
+        padding: 6px 88px 6px 2px;
+        border: 0;
+        border-bottom: 1px solid system.$gray-3;
+        @media screen and (min-width: 769px){
+            @include system.font-level-8;
+            padding: 8px 105px 8px 10px;
+        }
+        &::placeholder{
+            color: system.$gray-5;
+        }
+        &:focus{
+            outline: none;
+            border-bottom: 1px solid system.$magenta;
+        }
+    }
+    .search_btn{
+        @include system.button(primaryMagenta);
+        position: absolute;
+        top: 0;
+        right: 0;        
+    }
+}

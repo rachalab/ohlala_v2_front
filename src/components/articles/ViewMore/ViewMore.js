@@ -1,5 +1,5 @@
-import MostReadCards from "./MostReadCards/MostReadCards";
-import CardGridPagination from "./CardGridPagination/CardGridPagination";
+import MostReadCards from "../MostReadCards/MostReadCards";
+import CardGridPagination from "../../verticals/CardGridPagination/CardGridPagination";
 import NewsletterCard from "../NewsletterCard/NewsletterCard";
 import MagazineCard from "../MagazineCard/MagazineCard";
 import styles from "./ViewMore.module.scss"; 

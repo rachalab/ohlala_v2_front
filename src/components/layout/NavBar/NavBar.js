@@ -1,20 +1,26 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Search from '../Search/Search';
 import styles from "./NavBar.module.scss"; 
 
 export default function NavBar(){
   const [ menuState, setMenuState ] = useState(false);
+  const [ searchState, setSearchState ] = useState(false);
 
   function changeMenuState() {
     !menuState ? setMenuState(true) : setMenuState(false);
+  }
+
+  function changeSearchState() {
+    !searchState ? setSearchState(true) : setSearchState(false);
   }
 
   return(
     <>
       <header className={styles.header}>
 
-        <div className={styles.wrapper}>
+        <div className={`${styles.wrapper} ${!searchState ? styles.shadow : ''}`}>
 
           <h1 className={styles.brand}>
             <Link href="/">
@@ -23,15 +29,27 @@ export default function NavBar(){
           </h1>
 
           <div className={styles.actions}>
-            {!menuState && <button type="button" className={styles.subscription_btn}>suscribite</button>} 
-            {!menuState && <img className={styles.search_btn} src="/assets/icons/lupa_icon.svg" alt="menú" />}            
-            <button type="button" className={styles.menu_btn} onClick={ () => changeMenuState() }>
-              {!menuState ?
-                <img src="/assets/icons/menu_icon.svg" alt="menú" className={styles.hamburger} />
-              :
-                <img src="/assets/icons/close_icon.svg" alt="menú" className={styles.close} />
-              }
-            </button>
+            {!menuState && !searchState && <button type="button" className={styles.subscription_btn}>suscribite</button>} 
+
+            {!menuState &&
+              <button type="button" className={styles.search_btn} onClick={ () => changeSearchState() }>                
+                {!searchState ?
+                  <img className={styles.search} src="/assets/icons/lupa_icon.svg" alt="menú" />
+                :
+                  <img src="/assets/icons/close_icon.svg" alt="menú" className={styles.close} />
+                }
+              </button>            
+            } 
+
+            {!searchState &&
+              <button type="button" className={styles.menu_btn} onClick={ () => changeMenuState() }>
+                {!menuState ?
+                  <img src="/assets/icons/menu_icon.svg" alt="menú" className={styles.hamburger} />
+                :
+                  <img src="/assets/icons/close_icon.svg" alt="menú" className={styles.close} />
+                }
+              </button>
+            }
           </div>      
 
         </div>    
@@ -83,9 +101,21 @@ export default function NavBar(){
           </nav>
         }
 
+        {searchState &&
+          <div className={styles.search_panel}> 
+            <Search />
+          </div>
+        }
+
       </header>
 
-      {menuState && <div className={styles.overlay} onClick={ () => changeMenuState() } />}
+      {(menuState || searchState) && (
+        <div
+          className={styles.overlay}
+          onClick={ () => menuState ? changeMenuState() : changeSearchState()}
+        />
+      )}
+      
     </>
   )
 }
