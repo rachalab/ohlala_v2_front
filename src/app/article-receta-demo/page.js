@@ -13,7 +13,7 @@ export default function Page() {
     <>
       <DefaultHeader />
       <HeroRecipe />
-      <Body />
+      <Body data={{recipe:true}}/>
       <ViewMore />
     </>
   );
