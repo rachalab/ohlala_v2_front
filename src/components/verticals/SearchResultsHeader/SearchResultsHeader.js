@@ -7,7 +7,7 @@ export default function SearchResultsHeader({ title, number }){
     <div className={styles.wrapper}>
         <Breadcrumb colorMode={0} />
         <h1 className={styles.title}>{title}</h1>
-        <p className={styles.number}>{number} artículos</p>
+        {number && <p className={styles.number}>{number} artículos</p>}
     </div>
   )
 }
