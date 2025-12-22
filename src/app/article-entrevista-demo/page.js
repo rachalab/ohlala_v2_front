@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <>
       <ImageHeader />
-      <Body data={{recipe:false}}/>
+      <Body type='entrevista' />
       <ViewMore />
     </>
   );
