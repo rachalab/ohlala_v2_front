@@ -17,7 +17,9 @@ export default function Modal({ type }) {
 
   function closeModal() {
     setIsClosing(true); 
-    setModalStatus(false);  
+    setTimeout(() => {    
+      setModalStatus(false);  
+    }, 2000);     
   }
 
   const modalContent = (
@@ -26,10 +28,10 @@ export default function Modal({ type }) {
         {type === 'newsletter' &&
             <div className={styles.container_newsletter}>
 
-                <button onClick={closeModal} className={styles.close_btn} />                     
+                <button onClick={ () =>closeModal() } className={styles.close_btn} />                     
 
                 <div className={styles.img_cont}>
-                    <img src="/assets/images/newsletter_modal_img.jpg" className={styles.image} alt="Imagen" />
+                    <img src="/assets/images/newsletter_img.jpg" className={styles.image} alt="Imagen" />
                 </div>  
 
                 <div className={styles.text_cont}>
@@ -45,7 +47,7 @@ export default function Modal({ type }) {
             </div>        
         }        
 
-        <div className={styles.overlay_close} />
+        <div className={styles.overlay_close} onClick={ () =>closeModal() } />
 
     </div>
   );
