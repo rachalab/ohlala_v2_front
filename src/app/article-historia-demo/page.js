@@ -13,7 +13,7 @@ export default function Page() {
     <>
       <DefaultHeader />
       <HeroImage /> 
-      <Body data={{recipe:false}}/>
+      <Body type='historia' />
       <ViewMore />
     </>
   );
