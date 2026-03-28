@@ -4,15 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from 'next/link';
 import styles from "./TagSwiper.module.scss"; 
 
-export default function TagSwiper(){
+export default function TagSwiper({ data }){
+    // Assuming data contains a tags array or we can map the keys of data if they represent tags
+    const tags = data?.tags || (data ? Object.values(data).filter(item => item.title || item.target_id) : []);
 
-    const dataDemo = [
-        {'image' : '/assets/images/img_tag_filter_demo_1.jpg', 'title' : 'Horóscopo de hoy'},
-        {'image' : '/assets/images/img_tag_filter_demo_2.jpg', 'title' : 'Dakota Johnson'},
-        {'image' : '/assets/images/img_tag_filter_demo_3.jpg', 'title' : 'Navidad 2025'},
-        {'image' : '/assets/images/img_tag_filter_demo_5.jpg', 'title' : 'Moda 2026'},
-        {'image' : '/assets/images/img_tag_filter_demo_4.jpg', 'title' : 'Ideas deco'}
-    ]
+    if (tags.length === 0) return null;
 
     return (
         <div className={styles.wrapper}>
@@ -21,15 +17,15 @@ export default function TagSwiper(){
                 spaceBetween={0}
                 slidesPerView={"auto"}
                 navigation={false}
-                freeMode={false}
-                grabCursor={false}
+                freeMode={true}
+                grabCursor={true}
                 className={`tag-swiper`}
             >
-                {dataDemo.map((tag, i) => (
+                {tags.map((tag, i) => (
                     <SwiperSlide key={i}>
-                        <Link className={styles.tag_filter} href="#">
+                        <Link className={styles.tag_filter} href={tag.url || "#"}>
                             <div className={styles.image}>
-                                <img src={tag.image} alt="Imagen" />
+                                <img src={tag.image || "/assets/images/img_tag_filter_demo_1.jpg"} alt={tag.title || "Tag"} />
                             </div>            
                             {tag.title}
                         </Link> 

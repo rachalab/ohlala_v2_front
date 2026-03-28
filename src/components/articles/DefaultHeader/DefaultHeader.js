@@ -1,29 +1,43 @@
 import Breadcrumb from "@/components/layout/Breadcrumb/Breadcrumb";
-import styles from "./DefaultHeader.module.scss"; 
+import styles from "./DefaultHeader.module.scss";
+import { Fragment } from "react";
 
-export default function DefaultHeader(){
+export default function DefaultHeader({ title, excerpt, authors, category, collabs, time }) {
+
+  // Simple date formatter (e.g., "1 de agosto de 2025, 12:51")
+  const formatDate = (timestamp) => {
+    if (!timestamp) return "";
+    const date = new Date(timestamp);
+    return date.toLocaleString('es-AR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
 
   return (
     <div className={styles.wrapper}>
+      <Breadcrumb colorMode={0} category={category} />
 
-        <Breadcrumb colorMode={0} />
+      <h1 className={styles.title}>{title}</h1>
 
-        <h1 className={styles.title}>Del Delorean de Volver al futuro al auto de Lady Di: así es la expo para ver vehículos icónicos</h1>
+      <p className={styles.summary}>{excerpt}</p>
 
-        <p className={styles.summary}>Te contamos cómo es Iconos sobre ruedas, la expo para ver vehículos históricos, donde estarán desde el Delorean de Volver al futuro al auto de Lady Di o la Ferrari de Diego Maradona.</p>
+      <div className={styles.credits}>
+        <p className={styles.author}>
+          Por <strong>{authors?.map(a => a.title).join(', ')}</strong>
+          {collabs?.map((collab, index) => (
+            <Fragment key={index}>
+              <span className={styles.bullet}>•</span>
+              {collab.role} <strong>{collab.autores_as?.map(a => a.title).join(', ')}</strong>
+            </Fragment>
+          ))}
+        </p>
 
-        <div className={styles.credits}>
-
-            <p className={styles.author}>
-                Por <strong>Cristian Phoyú</strong>
-                <span className={styles.bullet}>•</span>
-                Fotografía <strong>Estudio Ahí va</strong>
-            </p>
-
-            <p className={styles.date}>1 de agosto de 2025, 12:51</p>   
-                     
-        </div>
-
+        <p className={styles.date}>{formatDate(time)}</p>
+      </div>
     </div>
-  )
+  );
 }

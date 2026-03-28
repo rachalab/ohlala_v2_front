@@ -1,37 +1,15 @@
 import Link from 'next/link';
 import styles from "./Card.module.scss"; 
 
-export default function Card({ type, imgUrl, tag, title, description, author, textSize, directionDesk, directionMobile, imageMasonry, authorImg }){
+export default function Card({ type, imgUrl, tag, title, description, author, textSize, directionDesk, directionMobile, imageMasonry, authorImg, url }){
 
-    //type: ‘poster’
-    //image: ‘URL/...’
-    //tag:  ‘SOCIEDAD’
-    //title: ‘Las películas que Dakota Johnson ama...’
-    //author: ‘Emanuel Juárez’
-
-    //type: ‘default’
-    //textSize: ‘M’
-    //cardDirectionDesk: ‘row’
-    //cardDirectionMobile: ‘column’
-    //image: ‘URL/...’
-    //imageMasonry: ‘false’
-    //tag:  ‘SOCIEDAD’
-    //title: ‘Las películas que Dakota Johnson ama...’
-    //author: ‘Emanuel Juárez’
-
-    //type: ‘opinion’
-    //image: ‘URL/...’
-    //title: ‘Actitud boleto capicúa: cómo habitar...’
-    //description: ‘En tiempos de incertidumbre y cambio, el movimiento más poderoso es...’
-    //author: ‘Georgina Sticco’
-    //authorImg: ‘URL/...’
-
+    const href = url || "/article-historia-demo";
     
     return (
         <> 
             {type === 'poster' &&
                 <article>
-                    <Link href="/article-historia-demo" className={styles.poster}>
+                    <Link href={href} className={styles.poster}>
 
                         <div className={styles.fixed_hight}>
                             <img src={imgUrl} className={styles.image} alt="Imagen" />
@@ -50,7 +28,7 @@ export default function Card({ type, imgUrl, tag, title, description, author, te
             {type === 'default' &&                
                 <article>
                     <Link
-                    href="/article-historia-demo"
+                    href={href}
                     className={`
                     ${styles.default}
                     ${styles[`direction_mobile_${directionMobile}`]}
@@ -74,7 +52,7 @@ export default function Card({ type, imgUrl, tag, title, description, author, te
 
             {type === 'opinion' &&
                 <article>
-                    <Link href="/article-historia-demo" className={`${styles.opinion} ${styles.direction_desk_column} ${styles.text_size_m}`}>
+                    <Link href={href} className={`${styles.opinion} ${styles.direction_desk_column} ${styles.text_size_m}`}>
 
                         <div className={styles.author_poster}>
                             <div className={styles.avatar}>
