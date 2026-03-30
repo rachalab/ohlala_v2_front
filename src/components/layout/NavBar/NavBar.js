@@ -1,12 +1,30 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Search from '../Search/Search';
+import { api } from '@/lib/api';
 import styles from "./NavBar.module.scss"; 
 
 export default function NavBar(){
   const [ menuState, setMenuState ] = useState(false);
   const [ searchState, setSearchState ] = useState(false);
+  const [ menuItems, setMenuItems ] = useState([]);
+  const [ subscription, setSubscription ] = useState(false);
+
+  useEffect(() => {
+    async function loadMenu() {
+      try {
+        const apiPath = '/menu/';
+        const data = await api.get(apiPath);     
+
+        setMenuItems(data['menu'] || []);
+        setSubscription(data['subscription'] || false);
+      } catch (err) {
+        console.warn('API call failed:', err?.message || err);
+      }
+    }
+    loadMenu();
+  }, []);
 
   function changeMenuState() {
     !menuState ? setMenuState(true) : setMenuState(false);
@@ -29,7 +47,13 @@ export default function NavBar(){
           </h1>
 
           <div className={styles.actions}>
-            {!menuState && !searchState && <button type="button" className={styles.subscription_btn}>suscribite</button>} 
+            {!menuState && !searchState && subscription && 
+              <button 
+                type="button" 
+                className={styles.subscription_btn}>
+                  {subscription?.title}
+              </button>
+            } 
 
             {!menuState &&
               <button type="button" className={styles.search_btn} onClick={ () => changeSearchState() }>                
@@ -51,53 +75,36 @@ export default function NavBar(){
               </button>
             }
           </div>      
+        </div>   
 
-        </div>    
-
-        {menuState &&
+        {menuState && Array.isArray(menuItems) &&
           <nav className={styles.menu}> 
-            <div className={styles.col_1}>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Actualidad</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Famosos</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Opinión</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Economía</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Sociedad</Link>
-            </div>
-            <div className={styles.col_2}>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Lifestyle</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Salud</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Historias</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Viajes</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Gastronomía</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Sexo</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Relaciones</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Maternidad</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Recetas</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Revista</Link>
-            </div>
-            <div className={styles.col_3}>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Horóscopo</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Rituales</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Numerología</Link>
-            </div>
-            <div className={styles.col_4}>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Espectáculos</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Series</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Películas</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Teatro</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Libros</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Música</Link>
-            </div>
-            <div className={styles.col_5}>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Moda</Link>
-            </div>
-            <div className={styles.col_6}>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Belleza</Link>
-            </div>
-            <div className={styles.col_7}>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Decoración</Link>
-              <Link href="/category-demo" className={styles.link} onClick={ () => changeMenuState() }>Jardín</Link>
-            </div>
+            {menuItems?.map((item, index) => (
+              <div key={index} className={styles[`col_${index + 1}`]}>
+                
+                {/* Item principal */}
+                <Link 
+                  href={item.url} 
+                  className={styles.link} 
+                  onClick={() => changeMenuState()}
+                >
+                  {item.title}
+                </Link>
+                
+                {item.children?.length > 0 && 
+                  item.children.map((subItem, subIndex) => (
+                    <Link 
+                      key={subIndex} 
+                      href={subItem.url} 
+                      className={`${styles.link} ${styles.subLink}`}
+                      onClick={() => changeMenuState()}
+                    >
+                      {subItem.title}
+                    </Link>
+                  ))
+                }
+              </div>
+            ))}
           </nav>
         }
 
