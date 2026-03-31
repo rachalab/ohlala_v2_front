@@ -8,7 +8,7 @@ export default function SectionHighlight({ data }) {
     const author = article?.author ? `por <strong>${article.author}</strong>` : "";
 
     return (
-        <div className={styles.container} style={{ backgroundColor: color }}>
+        <div className={styles.container} style={{ backgroundColor: color || "#000" }}>
             <div className={styles.wrapper}>
 
                 <div className={styles.img_cont}>
@@ -16,7 +16,7 @@ export default function SectionHighlight({ data }) {
                 </div>
 
                 <div className={styles.text_cont}>
-                    <p className={styles.tag} >{tag}</p>
+                    <p className={styles.tag} >{article.category}</p>
                     <h3 className={styles.title}>
                         <Link href={article?.url || "#"}>{article.title}</Link>
                     </h3>

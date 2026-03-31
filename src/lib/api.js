@@ -16,7 +16,7 @@ export async function apiFetch(endpoint, options = {}) {
 
   // Build URL with query parameters
   const url = new URL(`${API_BASE_URL}${endpoint.startsWith('/') ? endpoint : `/${endpoint}`}`);
-  
+  console.log("obteniendo", url);
   // Append query parameters
   Object.keys(params).forEach(key => {
     if (params[key] !== undefined && params[key] !== null) {
@@ -53,15 +53,15 @@ export async function apiFetch(endpoint, options = {}) {
  * Convenience methods for GET and POST
  */
 export const api = {
-  get: (endpoint, params = {}, options = {}) => 
+  get: (endpoint, params = {}, options = {}) =>
     apiFetch(endpoint, { ...options, method: 'GET', params }),
-  
-  post: (endpoint, body = {}, options = {}) => 
+
+  post: (endpoint, body = {}, options = {}) =>
     apiFetch(endpoint, { ...options, method: 'POST', body: JSON.stringify(body) }),
-  
-  put: (endpoint, body = {}, options = {}) => 
+
+  put: (endpoint, body = {}, options = {}) =>
     apiFetch(endpoint, { ...options, method: 'PUT', body: JSON.stringify(body) }),
-  
-  delete: (endpoint, options = {}) => 
+
+  delete: (endpoint, options = {}) =>
     apiFetch(endpoint, { ...options, method: 'DELETE' }),
 };

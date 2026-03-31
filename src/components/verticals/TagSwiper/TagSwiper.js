@@ -2,9 +2,9 @@
 import { Navigation, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from 'next/link';
-import styles from "./TagSwiper.module.scss"; 
+import styles from "./TagSwiper.module.scss";
 
-export default function TagSwiper({ data }){
+export default function TagSwiper({ data }) {
     // Assuming data contains a tags array or we can map the keys of data if they represent tags
     const tags = data?.tags || (data ? Object.values(data).filter(item => item.title || item.target_id) : []);
 
@@ -25,13 +25,13 @@ export default function TagSwiper({ data }){
                     <SwiperSlide key={i}>
                         <Link className={styles.tag_filter} href={tag.url || "#"}>
                             <div className={styles.image}>
-                                <img src={tag.image || "/assets/images/img_tag_filter_demo_1.jpg"} alt={tag.title || "Tag"} />
-                            </div>            
+                                <img src={tag.image.src || "/assets/images/img_tag_filter_demo_1.jpg"} alt={tag.title} />
+                            </div>
                             {tag.title}
-                        </Link> 
+                        </Link>
                     </SwiperSlide>
-                ))}               
-            </Swiper>           
-        </div>                 
+                ))}
+            </Swiper>
+        </div>
     )
 }     

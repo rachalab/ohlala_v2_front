@@ -1,7 +1,7 @@
 import TagSwiper from "@/components/verticals/TagSwiper/TagSwiper";
 import SectionsContainer from "@/components/verticals/SectionsContainer/SectionsContainer";
 import SectionHighlight from "@/components/verticals/SectionHighlight/SectionHighlight";
-import Modal from "@/components/utils/Modal/Modal";
+import NewsletterPopup from "@/components/utils/NewsletterPopup/NewsletterPopup";
 
 export const metadata = {
   title: 'Ohlalá | Portada',
@@ -16,7 +16,7 @@ export default function Home() {
       <SectionHighlight />
       <SectionsContainer />
       <SectionsContainer />
-      <Modal type='newsletter' />
+      <NewsletterPopup />
     </>
   );
 }
