@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import Link from 'next/link';
 import styles from "./Footer.module.scss"; 
 
-export default function FooterClient({ footerItems = [], networksItems = [], newsItems = [] }) {
+export default function FooterClient({ footerItems = [], newsItems = [] }) {
 
   function scrollToTop() {  
     window.scrollTo({
@@ -20,10 +20,10 @@ export default function FooterClient({ footerItems = [], networksItems = [], new
         <div className={styles.col_one}>
 
           <img src="/assets/images/ohlala_brand.svg" alt="Marca Ohlalá" className={styles.brand} />
-
-          {Array.isArray(networksItems) && networksItems?.length > 0 &&
+        {Array.isArray(footerItems) && footerItems?.length > 0 && footerItems[0] &&
             <div className={styles.social_media}> 
-                {networksItems?.map((subItem, subIndex) => (
+                {footerItems[1].children?.length > 0 && 
+                  footerItems[0].children?.map((subItem, subIndex) => (
                   <a
                     rel="noopener noreferrer"
                     target="_blank"
@@ -59,11 +59,11 @@ export default function FooterClient({ footerItems = [], networksItems = [], new
         {Array.isArray(footerItems) && footerItems?.length > 0 &&
           <>
             <div className={styles.col_two}>
-              {footerItems[0] &&
+              {footerItems[1] &&
                 <>
-                  {footerItems[0]?.title && <h5>{ footerItems[0].title}</h5>}
-                  {footerItems[0].children?.length > 0 && 
-                    footerItems[0]?.children.map((subItem, subIndex) => (
+                  {footerItems[1]?.title && <h5>{ footerItems[1].title}</h5>}
+                  {footerItems[1].children?.length > 0 && 
+                    footerItems[1]?.children.map((subItem, subIndex) => (
                       <Link 
                         key={subIndex} 
                         href={subItem.url} 
@@ -81,9 +81,9 @@ export default function FooterClient({ footerItems = [], networksItems = [], new
             <div className={styles.col_three}>
               {footerItems[1] &&
                 <>
-                  {footerItems[1]?.title && <h5>{ footerItems[1].title}</h5>}
-                  {footerItems[1].children?.length > 0 && 
-                    footerItems[1]?.children.map((subItem, subIndex) => (
+                  {footerItems[2]?.title && <h5>{ footerItems[2].title}</h5>}
+                  {footerItems[2].children?.length > 0 && 
+                    footerItems[2]?.children.map((subItem, subIndex) => (
                       <Link 
                         key={subIndex} 
                         href={subItem.url} 
@@ -110,10 +110,10 @@ export default function FooterClient({ footerItems = [], networksItems = [], new
         {Array.isArray(footerItems) &&
           <>
             <div className={styles.col_one}>
-              {footerItems[2] &&
+              {footerItems[3] &&
                 <>
-                  {footerItems[2].children?.length > 0 && 
-                    footerItems[2]?.children.map((subItem, subIndex) => (
+                  {footerItems[3].children?.length > 0 && 
+                    footerItems[3]?.children.map((subItem, subIndex) => (
                       <Fragment key={subIndex}>
                         <a
                           rel="noopener noreferrer" 
@@ -122,7 +122,7 @@ export default function FooterClient({ footerItems = [], networksItems = [], new
                         >
                           {subItem.title}
                         </a>
-                        {subIndex < footerItems[2].children.length - 1 && <hr />}
+                        {subIndex < footerItems[3].children.length - 1 && <hr />}
                       </Fragment>
                     ))
                   }
