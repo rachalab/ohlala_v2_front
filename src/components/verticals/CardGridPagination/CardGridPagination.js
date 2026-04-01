@@ -48,7 +48,7 @@ const dataDemo = [
 ];
 
 
-export default function CardGridPagination({ cards, category }){
+export default function CardGridPagination({ cards, tag }){
 
     const [visibleCards, setVisibleCards] = useState(() => cards.slice(0, CHUNK_SIZE));
     const [queue, setQueue] = useState(() => cards.slice(CHUNK_SIZE));
@@ -66,9 +66,8 @@ export default function CardGridPagination({ cards, category }){
         const fetchMore = async () => {
             setIsLoading(true);
             try {
-                const apiPath = `/range/${category?.type}/${category?.tid}/${offset}`;
+                const apiPath = `/range/${tag?.type}/${tag?.tid}/${offset}`;
                 const response = await api.get(apiPath);
-                
                 const newCards = response?.articles || [];
 
                 setQueue(newCards);

@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import styles from "./Breadcrumb.module.scss";
 
-export default function Breadcrumb({ colorMode, category }) {
-  const categoryName = category?.title || "Espectáculos";
+export default function Breadcrumb({ colorMode, tag }) {
+  const categoryName = tag?.title || "Espectáculos";
   //const categoryUrl = category?.tid ? `/category/${category.tid}` : "/";
-  const categoryUrl = category?.url ? category?.url : "/";
+  const categoryUrl = tag?.url ? tag?.url : "/";
 
   return (
     <div className={`

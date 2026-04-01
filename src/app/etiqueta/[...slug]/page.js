@@ -42,10 +42,10 @@ export default async function Page({ params, searchParams }) {
   return(
     <>
        <SearchResultsHeader
-         title='Noticias sobre “Beatles”'
-         category={data?.category}
+         title={data?.tag?.filter_label ?? "Resultados"}
+         tag={data?.tag}
        />
-      <SearchResults cards={data?.articles} category={data?.category} />
+      <SearchResults cards={data?.articles} tag={data?.tag} />
     </>
   );
 }
