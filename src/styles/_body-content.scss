@@ -17,21 +17,7 @@
             margin-bottom: 10px;
         }
 
-        &:first-of-type {
-            &::first-letter {
-                font-size: 47px;
-                line-height: 100%;
-                float: left;
-                margin-right: 8px;
-                font-family: 'PPEiko', Helvetica, sans-serif;
-                font-weight: 700;
-                color: system.$magenta;
 
-                @media screen and (min-width: 1200px) {
-                    font-size: 58px;
-                }
-            }
-        }
 
         strong {
             font-weight: 600;
@@ -40,6 +26,23 @@
         a {
             color: system.$magenta;
             text-decoration: underline;
+        }
+    }
+
+    .paragraph:first-of-type,
+    .ce-block:first-of-type .ce-paragraph {
+        &::first-letter {
+            font-size: 47px;
+            line-height: 100%;
+            float: left;
+            margin-right: 8px;
+            font-family: 'PPEiko', Helvetica, sans-serif;
+            font-weight: 700;
+            color: system.$magenta;
+
+            @media screen and (min-width: 1200px) {
+                font-size: 58px;
+            }
         }
     }
 

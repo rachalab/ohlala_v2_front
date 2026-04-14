@@ -9,10 +9,10 @@ const COMPONENT_MAP = {
   section_highlight: SectionHighlight,
 };
 
-export default function Vertical({ title, components }) {
+export default function Vertical({ title, components, showHeader = true }) {
   return (
     <>
-      <VerticalHeader title={title} />
+      {showHeader && <VerticalHeader title={title} />}
       {components?.map((comp) => {
         const Component = COMPONENT_MAP[comp.type];
         if (!Component) {
