@@ -1,0 +1,99 @@
+@use "system";
+
+// Mixin con los estilos de contenido del Body.
+// Se usa tanto en Body.module.scss (CSS Modules) como en body-content.scss (Drupal).
+@mixin body-content-styles {
+
+    .paragraph,
+    .ce-paragraph {
+        @include system.font-level-11;
+        font-weight: 400;
+        color: system.$black-2;
+        line-height: 152%;
+        padding-top: 10px;
+        margin-bottom: 8px;
+
+        @media screen and (min-width: 769px) {
+            margin-bottom: 10px;
+        }
+
+
+
+        strong {
+            font-weight: 600;
+        }
+
+        a {
+            color: system.$magenta;
+            text-decoration: underline;
+        }
+    }
+
+    .paragraph:first-of-type,
+    .ce-block:first-of-type .ce-paragraph {
+        &::first-letter {
+            font-size: 47px;
+            line-height: 100%;
+            float: left;
+            margin-right: 8px;
+            font-family: 'PPEiko', Helvetica, sans-serif;
+            font-weight: 700;
+            color: system.$magenta;
+
+            @media screen and (min-width: 1200px) {
+                font-size: 58px;
+            }
+        }
+    }
+
+    .subtitle,
+    .ce-header {
+        font-family: 'PPEiko', Helvetica, sans-serif;
+        @include system.font-level-7;
+        font-weight: 700;
+        color: system.$black-2;
+        line-height: 130%;
+        padding-top: 15px;
+        margin-bottom: 5px;
+
+        @media screen and (min-width: 769px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .image_wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 22px 0;
+
+        @media screen and (min-width: 769px) {
+            padding: 25px 0;
+        }
+
+        .image {
+            width: 100%;
+            height: auto;
+            padding-bottom: 5px;
+        }
+
+        .caption {
+            @include system.font-level-12;
+            font-weight: 400;
+            color: system.$gray-2;
+            line-height: 150%;
+        }
+    }
+
+    .horizontal_ad {
+        padding: 22px 0;
+
+        @media screen and (min-width: 769px) {
+            padding: 25px 0;
+        }
+
+        .ad_wrapper {
+            height: 480px;
+            background-color: #e3e3e3;
+        }
+    }
+}

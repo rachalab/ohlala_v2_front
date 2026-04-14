@@ -1,0 +1,7 @@
+// Archivo consumido por el Route Handler /api/styles/body
+// Genera CSS con clases planas (no hasheadas) para uso en Drupal.
+@use "body-content";
+
+.ohlala-body-content {
+    @include body-content.body-content-styles;
+}
